@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
-	pageEncoding="EUC-KR"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -35,10 +35,10 @@ height:100%;
 </head>
 <body>
 	<div class="incdiv" id="menuinc">
-		<div class="menu" id="intro" align="center">ΐΞΖ®·Ξ</div>
-		<div class="menu" id="reser" align="center">ΏΉΎΰ</div>
-		<div class="menu" id="prod" align="center">Α¦Η°</div>
-		<div class="menu" id="ques" align="center">ΑϊΉ®</div>
+		<div class="menu" id="intro" align="center">μΈνΈλ΅</div>
+		<div class="menu" id="reser" align="center">μμ•½</div>
+		<div class="menu" id="prod" align="center">μ ν’</div>
+		<div class="menu" id="ques" align="center">μ§λ¬Έ</div>
 	</div>
 </body>
 </html>

@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -8,16 +8,16 @@
 </head>
 <body>
 <div class="incdiv" id="maininc">
-¸ÞÀÎ!¤±¤±¤¤¤·¤±¤¤<br>
-¸ÞÀÎ!¤±¤±¤¤¤·¤±¤¤<br>
-¸ÞÀÎ!¤±¤±¤¤¤·¤±¤¤<br>
-¸ÞÀÎ!¤±¤±¤¤¤·¤±¤¤<br>
-¸ÞÀÎ!¤±¤±¤¤¤·¤±¤¤<br>
-¸ÞÀÎ!¤±¤±¤¤¤·¤±¤¤<br>
-¸ÞÀÎ!¤±¤±¤¤¤·¤±¤¤<br>
-¸ÞÀÎ!¤±¤±¤¤¤·¤±¤¤<br>
-¸ÞÀÎ!¤±¤±¤¤¤·¤±¤¤<br>
-¸ÞÀÎ!¤±¤±¤¤¤·¤±¤¤<br>
-¸ÞÀÎ!¤±¤±¤¤¤·¤±¤¤<br>
+ë©”ì¸!ã…ã…ã„´ã…‡ã…ã„´<br>
+ë©”ì¸!ã…ã…ã„´ã…‡ã…ã„´<br>
+ë©”ì¸!ã…ã…ã„´ã…‡ã…ã„´<br>
+ë©”ì¸!ã…ã…ã„´ã…‡ã…ã„´<br>
+ë©”ì¸!ã…ã…ã„´ã…‡ã…ã„´<br>
+ë©”ì¸!ã…ã…ã„´ã…‡ã…ã„´<br>
+ë©”ì¸!ã…ã…ã„´ã…‡ã…ã„´<br>
+ë©”ì¸!ã…ã…ã„´ã…‡ã…ã„´<br>
+ë©”ì¸!ã…ã…ã„´ã…‡ã…ã„´<br>
+ë©”ì¸!ã…ã…ã„´ã…‡ã…ã„´<br>
+ë©”ì¸!ã…ã…ã„´ã…‡ã…ã„´<br>
 </div></body>
 </html>

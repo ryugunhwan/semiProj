@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
-	pageEncoding="EUC-KR"%>
+	pageEncoding="UTF-8"%>
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
@@ -44,11 +44,11 @@ logo = function(){
 		<div id="login" align="right">
 			<c:choose>
 				<c:when test="${login }">
-		�α���
+		로그인
 		</c:when>
 				<c:otherwise>
-		�α׾ƿ�
-		<!-- ������ -->
+		로그아웃
+		<!-- 내정보 -->
 				</c:otherwise>
 			</c:choose>
 
