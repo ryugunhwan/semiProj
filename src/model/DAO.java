@@ -4,6 +4,10 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 import javax.naming.Context;
 import javax.naming.InitialContext;
@@ -29,20 +33,117 @@ public class DAO {
 			e.printStackTrace();
 		}
 	}
-	
-	//dao ÇÏ³ª¿¡ ¸ğµç Å×ÀÌºí? vo´Â Å×ÀÌºí´ç ÇÏ³ª¾¿ ¹Ş°í?
 
-	//¸â¹ö ¼¿·ºÆ® ÀÎ¼­Æ® µô¸®Æ® ¾÷µ¥ÀÌÆ®
+	// dao í•˜ë‚˜ì— vo ì—¬ëŸ¬ê°œ?
+
 	
-	//±â»ç ¼¿·ºÆ®
 	
-	//¿¹¾à ¼¿·ºÆ® ÀÎ¼­Æ® µô¸®Æ®
-	
-	//Á¦Ç° ¼¿·ºÆ® ÀÎ¼­Æ® µô¸®Æ® ¾÷µ¥ÀÌÆ®
-	
+	/*ë‚ ì§œë„£ê³  ì˜ˆì•½ì •ë³´ ë¶ˆëŸ¬ì˜¤ê¸°*/
+	public ArrayList<ReserVO> dayPart(java.util.Date resdate) {
+		ArrayList<ReserVO> list = new ArrayList<>();
+
+		try {
+			System.out.println("ì•ˆë“¤ì–´ê°€ëƒ");
+
+			String dd = new SimpleDateFormat("yyyy-M-d").format(resdate);
+			sql = "select * from reser where resdate = '" + dd + "'";
+			ptmt = con.prepareStatement(sql);
+
+			// Date date = new Date(2018-1900, 5-1, 16);
+
+			// ptmt.setDate(1, new
+			// Date(resdate.getYear(),resdate.getMonth()-1,resdate.getDate()));
+
+			// System.out.println("select * from reser where resdate = "+new
+			// SimpleDateFormat("yyyy-M-d").format(resdate));
+			System.out.println(sql);
+			rs = ptmt.executeQuery();
+
+			System.out.println("DAO_dayPart rsê²€ì‚¬");
+			while (rs.next()) {
+				System.out.println("DAO_dayPart rsìˆìŒ");
+				ReserVO vo = new ReserVO();
+
+				vo.setGid(rs.getInt("gid"));
+				vo.setPart1(rs.getInt("part1"));
+				vo.setPart2(rs.getInt("part2"));
+				vo.setPart3(rs.getInt("part3"));
+				System.out.println(vo);
+				list.add(vo);
+			}
+			return list;
+		} catch (Exception e) {
+			e.printStackTrace();
+			// TODO: handle exception
+		} finally {
+			//close();
+		}
+
+		return null;
+	}
+
+	/*ì¹´í…Œê³ ë¦¬ ë¦¬ìŠ¤íŠ¸ ë¶ˆëŸ¬ì˜¤ê¸°*/
+	public Map<String, String> cateList() {
+		Map<String, String> map = new HashMap<String, String>();
+		try {
+			sql = "select * from categori";
+			ptmt = con.prepareStatement(sql);
+			
+			rs = ptmt.executeQuery();
+			while(rs.next()) {				
+				map.put(rs.getString("rang"), rs.getString("cate"));
+			}
+			return map;
+		} catch (Exception e) {
+			// TODO: handle exception
+		} finally {		}
+		return null;
+	}
+
+	/*ì˜ˆì•½ì •ë³´ì—ì„œ íŒŒíŠ¸1 ìŠ¤ì¼€ì¤„ ì¶”ê°€*/
+	public void setPart1(ReserVO vo) {
+		try {
+			System.out.print(vo);
+
+			sql = "update reser set part1=1 where gid=? and resdate=?";
+			ptmt = con.prepareStatement(sql);
+
+			ptmt.setInt(1, vo.getGid());
+			ptmt.setDate(2, vo.getResDate());
+			ptmt.executeUpdate();
+			System.out.println("execute");
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			System.out.println();
+		}
+
+	}
+
+	/*
+	 * try { sql=""; ptmt = con.prepareStatement(sql); ptmt.setInt(1, 1);
+	 * ptmt.setString(1, ""); ptmt.executeQuery(); }catch (Exception e) { // TODO:
+	 * handle exception }finally {
+	 * 
+	 * }
+	 */
+
 	public void close() {
-		if(rs!=null) try {rs.close();} catch (SQLException e) {}
-		if(ptmt!=null) try {ptmt.close();} catch (SQLException e) {}
-		if(con!=null) try {con.close();} catch (SQLException e) {}
+		if (rs != null)
+			try {
+				rs.close();
+			} catch (SQLException e) {
+			}
+		if (ptmt != null)
+			try {
+				ptmt.close();
+			} catch (SQLException e) {
+			}
+		if (con != null)
+			try {
+				con.close();
+			} catch (SQLException e) {
+			}
 	}
 }
