@@ -90,14 +90,10 @@ div {
 	float: left;
 	width: 70%;
 	height: auto;
-	background-color: blue;
+	background-color: #eee;
 }
 
-/* 
-/////////////////////여기연습//@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@/ */
 
-/* 
-/////////////////////여기연습끝//@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@/ */
 </style>
 
 <script type="text/javascript" src="../js/jquery-3.3.1.min.js"></script>
@@ -111,77 +107,6 @@ $(this).stop().animate({height:hh},'easeOutBounce');}); });
 
 
 
-
-
-/* 
-/////////////////////여기연습//@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@/ */
-/* 
-	$(document).ready(function(){
-		
-		$('#main_menu2').click(function(){
-			$('#sub_menu2').stop();
-			$('#sub_menu2')animate({height:100px},100))
-			 */
-/* 		$('#main_menu2').click(function(){
-			$('#sub_menu2').stop();
-			$('#sub_menu2')animate({height:0px},100))
-			
-		}) */
-		
-		
-/* 	}) */
-/* 	 $(document).ready(function(){
-        // menu 클래스 바로 하위에 있는 a 태그를 클릭했을때
-        $("#main_menu1").click(function(){
-            var submenu = $(this).next("ul");
-
-            // submenu 가 화면상에 보일때는 위로 보드랍게 접고 아니면 아래로 보드랍게 펼치기
-            if( submenu.is(":visible") ){
-                submenu.slideUp();
-            }else{
-                submenu.slideDown();
-            }
-        });
-    });
-
-
-	function menu_effect1(){
-	       $('#sub_menu1').stop();
-	       $('#sub_menu1').animate({height:100}); 
-
-	} 
- 	function menu_effect2(){
-	       $('#sub_menu2').stop();
-	       $('#sub_menu2').animate({height:100}); 
-	} 
-	function menu_effect3(){
-	       $('[id=sub_menu3]').stop();
-	       $('[id=sub_menu3]').animate({height:100}); 
-	}
-	function menu_effect4(){
-	       $('[id=sub_menu4]').stop();
-	       $('[id=sub_menu4]').animate({height:100}); 
-	} 
-	 */
-	 
-	 
-	 
-	 
-	 
-	 /* 
-/////////////////////여기연습끝//@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@/ */
-
-
-gogo = function(url){
-		 
-		 
-		 <%
-		 request.setAttribute("main", "about_sangsung.jsp");
-		 %>
-		 location.href="${}";
-		 targ
-
-	 }
 </script>
 
 
@@ -204,8 +129,8 @@ gogo = function(url){
 			메뉴들이 들어갈 예정입니다.
 			<div class="title" data-flag="0">
 				<div class="main_menu" id="main_menu1">Intro</div>
-				<div class="sub_menu" id="sub_menu1" onclick="gogo()">기업&nbsp;정보</div>
-				<div class="sub_menu" id="sub_menu2" onclik='/sangeun/about_CEO'>경&nbsp;영&nbsp;진</div>
+				<div class="sub_menu" id="sub_menu1" >기업&nbsp;정보</div>
+				<div class="sub_menu" id="sub_menu2" >경&nbsp;영&nbsp;진</div>
 				<div class="sub_menu" id="sub_menu3">Q&nbsp;&nbsp;&&nbsp;&nbsp;A</div>
 			</div>
 
