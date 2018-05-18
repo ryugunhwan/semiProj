@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="EUC-KR"%>
+	pageEncoding="UTF-8"%>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
@@ -124,25 +124,25 @@ $(this).stop().animate({height:hh},'easeOutBounce');}); });
 
 
 	<div class="inc" id="s_center" style="background-color: orange;">
-		<!--  °¡¿îµ¥DIV @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
+		<!--  ê°€ìš´ë°DIV @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
 		<div id="menuBar">
-			¸Ş´ºµéÀÌ µé¾î°¥ ¿¹Á¤ÀÔ´Ï´Ù.
+			ë©”ë‰´ë“¤ì´ ë“¤ì–´ê°ˆ ì˜ˆì •ì…ë‹ˆë‹¤.
 			<div class="title" data-flag="0">
 				<div class="main_menu" id="main_menu1">Intro</div>
-				<div class="sub_menu" id="sub_menu1" >±â¾÷&nbsp;Á¤º¸</div>
-				<div class="sub_menu" id="sub_menu2" >°æ&nbsp;¿µ&nbsp;Áø</div>
+				<div class="sub_menu" id="sub_menu1" >ê¸°ì—…&nbsp;ì •ë³´</div>
+				<div class="sub_menu" id="sub_menu2" >ê²½&nbsp;ì˜&nbsp;ì§„</div>
 				<div class="sub_menu" id="sub_menu3">Q&nbsp;&nbsp;&&nbsp;&nbsp;A</div>
 			</div>
 
 			<div class="title" data-flag="0">
-				<div class="main_menu" id="main_menu2">Á¦&nbsp;&nbsp;&nbsp;&nbsp;Ç°</div>
+				<div class="main_menu" id="main_menu2">ì œ&nbsp;&nbsp;&nbsp;&nbsp;í’ˆ</div>
 				<div class="sub_menu" id="sub_menu1">sub4</div>
 				<div class="sub_menu" id="sub_menu2">sub5</div>
 				<div class="sub_menu" id="sub_menu3">sub6</div>
 			</div>
 
 			<div class="title" data-flag="0">
-				<div class="main_menu" id="main_menu3">¿¹&nbsp;&nbsp;&nbsp;&nbsp;¾à</div>
+				<div class="main_menu" id="main_menu3">ì˜ˆ&nbsp;&nbsp;&nbsp;&nbsp;ì•½</div>
 				<div class="sub_menu" id="sub_menu1">sub7</div>
 				<div class="sub_menu" id="sub_menu2">sub8</div>
 				<div class="sub_menu" id="sub_menu3">sub9</div>

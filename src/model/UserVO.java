@@ -1,5 +1,6 @@
 package model;
 
+
 public class UserVO {
 	int userId, upoint;
 	String uname, upw, uaddress, uphone;

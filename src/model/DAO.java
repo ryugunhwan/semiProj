@@ -13,6 +13,8 @@ import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.sql.DataSource;
 
+import sangeun.reservation;
+
 public class DAO {
 
 	Connection con;
@@ -37,8 +39,68 @@ public class DAO {
 	// dao 하나에 vo 여러개?
 
 	
+	public EngineerVO reserEngi(int gid) {
+		try {
+			System.out.println("userReser진입");
+
+			sql = "select * from engineer where gid = ?";
+			ptmt = con.prepareStatement(sql);
+			ptmt.setInt(1, gid);
+			
+			rs = ptmt.executeQuery();
+			if(rs.next()) {
+				EngineerVO vo = new EngineerVO();
+				vo.setGid(gid);
+				vo.setePhone(rs.getString("ephone"));
+				vo.setEpicture(rs.getString("epicture"));
+				vo.setEname(rs.getString("ename"));
+				return vo;
+			}
+			
+		}catch (Exception e) {
+			e.printStackTrace();
+			// TODO: handle exception
+		}finally {
+			
+		}
+
+			return null;
+		
+	}
 	
-	/*날짜넣고 예약정보 불러오기*/
+	public ArrayList<ReserVO> userReser(int uid) {
+		ArrayList<ReserVO> list = new ArrayList<>();
+		
+		try {
+			System.out.println("userReser진입");
+
+			sql = "select * from reser where userid = ?";
+			ptmt = con.prepareStatement(sql);
+			ptmt.setInt(1, uid);
+			
+			rs = ptmt.executeQuery();
+			while(rs.next()) {
+				ReserVO vo = new ReserVO();
+				vo.setNum(rs.getInt("num"));
+				vo.setGid(rs.getInt("gid"));
+				vo.setPart1(rs.getInt("part1"));
+				vo.setPart2(rs.getInt("part2"));
+				vo.setPart3(rs.getInt("part3"));
+				vo.setUser_id(uid);
+				vo.setResDate(rs.getDate("resDate"));
+				list.add(vo);
+			}
+			
+		}catch (Exception e) {
+			// TODO: handle exception
+		}finally {
+			
+		}
+
+			return list;
+	}
+	
+	/* 날짜넣고 예약정보 불러오기 */
 	public ArrayList<ReserVO> dayPart(java.util.Date resdate) {
 		ArrayList<ReserVO> list = new ArrayList<>();
 
@@ -73,35 +135,70 @@ public class DAO {
 			}
 			return list;
 		} catch (Exception e) {
-			e.printStackTrace();
+//			e.printStackTrace();
 			// TODO: handle exception
 		} finally {
-			//close();
+			// close();
 		}
 
 		return null;
 	}
 
-	/*카테고리 리스트 불러오기*/
+	/* 카테고리 리스트 불러오기 */
 	public Map<String, String> cateList() {
 		Map<String, String> map = new HashMap<String, String>();
 		try {
 			sql = "select * from categori";
 			ptmt = con.prepareStatement(sql);
-			
+
 			rs = ptmt.executeQuery();
-			while(rs.next()) {				
-				map.put(rs.getString("rang"), rs.getString("cate"));
+			while (rs.next()) {
+				map.put(rs.getString("cate"), rs.getString("rang"));
 			}
 			return map;
 		} catch (Exception e) {
 			// TODO: handle exception
-		} finally {		}
+		} finally {
+		}
 		return null;
 	}
 
-	/*예약정보에서 파트1 스케줄 추가*/
-	public void setPart1(ReserVO vo) {
+	
+	
+	/* 예약vo 넣으면 예약에 대한 모든정보 받아올거 */
+	public void reserDetail(ReserVO vo) {
+		UserVO user = findUser(vo.user_id);
+		try {
+			sql = "";
+			ptmt = con.prepareStatement(sql);
+			ptmt.setInt(1, 1);
+			ptmt.setString(1, "");
+			ptmt.executeQuery();
+		} catch (Exception e) {
+		} finally {
+
+		}
+	}
+
+	/* 예약정보 넣으면 유저정보 받아올거 */
+	public UserVO findUser(int reserid) {
+		try {
+			sql = "select user.* ";
+			ptmt = con.prepareStatement(sql);
+			ptmt.setInt(1, 1);
+			ptmt.setString(1, "");
+			ptmt.executeQuery();
+
+			return new UserVO();
+		} catch (Exception e) {
+		} finally {
+
+		}
+		return null;
+	}
+
+	/* 예약정보에서 파트1 스케줄 추가 */
+	/*public void setPart1(ReserVO vo) {
 		try {
 			System.out.print(vo);
 
@@ -119,7 +216,7 @@ public class DAO {
 			System.out.println();
 		}
 
-	}
+	}*/
 
 	/*
 	 * try { sql=""; ptmt = con.prepareStatement(sql); ptmt.setInt(1, 1);
